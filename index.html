@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codexを動かして学んだこと</title>
+    <meta
+      name="description"
+      content="Codexを実際に動かしながら学んだ、頼み方、読み方、直し方、検証の進め方をまとめた静的サイトです。"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header" aria-label="サイトヘッダー">
+      <a class="brand" href="#top" aria-label="トップへ戻る">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>Codex Learning Log</span>
+      </a>
+      <nav class="site-nav" aria-label="ページ内ナビゲーション">
+        <a href="#learnings">学び</a>
+        <a href="#loop">進め方</a>
+        <a href="#notes">気づき</a>
+        <a href="#next">次に試す</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/codex-learning-hero.png"
+          alt="AIコーディング支援と一緒に学びを整理している作業机のイラスト"
+        >
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Learning by building with Codex</p>
+          <h1 id="hero-title">
+            <span>Codexを動かして</span>
+            <span>学んだこと</span>
+          </h1>
+          <p class="hero-copy">
+            ただ答えを受け取るだけではなく、文脈を渡し、差分を読み、検証まで一緒に回す。
+            Codexを使うほど、開発は「頼み方」と「確かめ方」の練習でもあると分かってきました。
+          </p>
+          <div class="hero-actions" aria-label="主要リンク">
+            <a class="primary-link" href="#learnings">学びを見る</a>
+            <a class="secondary-link" href="#loop">進め方を見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-label="要約">
+        <div class="section-inner intro-grid">
+          <p>
+            Codexは、速く書くためだけの道具ではありませんでした。自分の考えを言語化し、
+            変更の根拠を読み、動作確認まで含めて小さく進めるための相棒です。
+          </p>
+          <div class="quick-stats" aria-label="学びの要点">
+            <div>
+              <strong>5</strong>
+              <span>学びの型</span>
+            </div>
+            <div>
+              <strong>4</strong>
+              <span>実践ステップ</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>大事な姿勢</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light-section" id="learnings" aria-labelledby="learnings-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Key learnings</p>
+            <h2 id="learnings-title">使って分かった5つのこと</h2>
+            <p>
+              便利さの中心にあるのは、自動化そのものよりも、曖昧な作業を小さな判断に分けられることでした。
+            </p>
+          </div>
+
+          <div class="learning-grid">
+            <article class="learning-card">
+              <span class="card-number">01</span>
+              <h3>文脈を先に渡す</h3>
+              <p>
+                目的、前提、触ってよい範囲、期待する確認方法を先に置くと、返ってくる提案の粒度が揃います。
+              </p>
+            </article>
+            <article class="learning-card accent-mint">
+              <span class="card-number">02</span>
+              <h3>小さく任せる</h3>
+              <p>
+                大きな変更を一気に頼むより、調査、実装、確認を分けた方が読みやすく、戻しやすくなります。
+              </p>
+            </article>
+            <article class="learning-card accent-amber">
+              <span class="card-number">03</span>
+              <h3>差分で理解する</h3>
+              <p>
+                生成されたコードを完成品として眺めるより、なぜその差分になったかを追う方が身につきます。
+              </p>
+            </article>
+            <article class="learning-card accent-rose">
+              <span class="card-number">04</span>
+              <h3>検証まで含める</h3>
+              <p>
+                テスト、ブラウザ確認、ログ確認まで頼むと、会話が感想ではなく事実ベースに変わります。
+              </p>
+            </article>
+            <article class="learning-card accent-ink">
+              <span class="card-number">05</span>
+              <h3>失敗を素材にする</h3>
+              <p>
+                うまくいかなかった出力も、条件の抜け、前提の誤り、確認不足を見つける材料になります。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section" id="loop" aria-labelledby="loop-title">
+        <div class="section-inner split-layout">
+          <div class="section-heading compact">
+            <p class="eyebrow">Working loop</p>
+            <h2 id="loop-title">いちばん効いた進め方</h2>
+            <p>
+              Codexとの作業は、依頼して終わりではなく、短い往復を重ねるほど精度が上がりました。
+            </p>
+          </div>
+
+          <ol class="loop-list" aria-label="Codexとの作業ループ">
+            <li>
+              <span>1</span>
+              <div>
+                <h3>現状を見せる</h3>
+                <p>ファイル構成、エラー、直したい振る舞いを共有して、まず観察してもらう。</p>
+              </div>
+            </li>
+            <li>
+              <span>2</span>
+              <div>
+                <h3>目的を絞る</h3>
+                <p>「何を良くしたいか」を一つにして、変更範囲が広がりすぎないようにする。</p>
+              </div>
+            </li>
+            <li>
+              <span>3</span>
+              <div>
+                <h3>差分を読む</h3>
+                <p>実装の意図、既存コードとのつながり、残ったリスクを自分の言葉で確認する。</p>
+              </div>
+            </li>
+            <li>
+              <span>4</span>
+              <div>
+                <h3>動かして確かめる</h3>
+                <p>テストや画面確認を通して、納得ではなく事実で終わらせる。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section dark-section" id="notes" aria-labelledby="notes-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Notes</p>
+            <h2 id="notes-title">場面ごとの気づき</h2>
+            <p>
+              同じCodexでも、依頼、修正、検証で効く言葉が変わります。下の切り替えで、使い分けを整理しました。
+            </p>
+          </div>
+
+          <div class="notes-panel">
+            <div class="note-tabs" role="tablist" aria-label="気づきの分類">
+              <button class="note-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="note-request" id="tab-request">
+                依頼する
+              </button>
+              <button class="note-tab" type="button" role="tab" aria-selected="false" aria-controls="note-fix" id="tab-fix">
+                直す
+              </button>
+              <button class="note-tab" type="button" role="tab" aria-selected="false" aria-controls="note-verify" id="tab-verify">
+                検証する
+              </button>
+            </div>
+
+            <div class="note-content is-active" id="note-request" role="tabpanel" aria-labelledby="tab-request">
+              <h3>よい依頼は、小さな設計書になる</h3>
+              <p>
+                「いい感じにして」よりも、目的、読者、制約、確認方法を渡す方が、Codexは迷わず動けます。
+                依頼文を書く時間は、そのまま自分の設計を整える時間になりました。
+              </p>
+              <pre><code>目的: 初見でも分かる静的サイトにする
+前提: 既存ファイルはまだない
+変更範囲: HTML / CSS / JS / 画像アセット
+確認: ブラウザで崩れと読みやすさを見る</code></pre>
+            </div>
+
+            <div class="note-content" id="note-fix" role="tabpanel" aria-labelledby="tab-fix" hidden>
+              <h3>修正依頼は、違和感を具体化する練習</h3>
+              <p>
+                「変」だけでは直せません。どの画面幅で、どの要素が、どんな期待とズレているかを言うと、
+                修正は速くなります。これは人間同士のレビューにもそのまま効きました。
+              </p>
+              <pre><code>現象: モバイルで見出しが窮屈
+期待: 2行までは自然に読める
+範囲: ヒーローだけ調整
+避けたいこと: 全体の余白を崩さない</code></pre>
+            </div>
+
+            <div class="note-content" id="note-verify" role="tabpanel" aria-labelledby="tab-verify" hidden>
+              <h3>検証は、AIと自分を同じ現実に戻す</h3>
+              <p>
+                画面、テスト、ログ、差分を見ると、会話の雰囲気ではなく動いている事実で判断できます。
+                Codexはここまで一緒に回して初めて、安心して任せられる道具になります。
+              </p>
+              <pre><code>確認したこと:
+- 主要セクションが表示される
+- タブが切り替わる
+- モバイル幅で文字が重ならない
+- 画像アセットが読み込まれる</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reflection-section" aria-labelledby="reflection-title">
+        <div class="section-inner reflection-layout">
+          <div>
+            <p class="eyebrow">Reflection</p>
+            <h2 id="reflection-title">一番の収穫</h2>
+          </div>
+          <blockquote>
+            Codexを使うほど、コードを書く力だけでなく、問題を分ける力、説明する力、確かめる力が鍛えられる。
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="section light-section" id="next" aria-labelledby="next-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Next experiments</p>
+            <h2 id="next-title">次に試したいこと</h2>
+            <p>
+              学びを続けるなら、Codexに任せる範囲を少しずつ広げながら、自分の確認軸も育てていきます。
+            </p>
+          </div>
+
+          <div class="checklist-grid">
+            <label class="check-item">
+              <input type="checkbox">
+              <span>小さなバグ修正を任せて、原因説明まで読む</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span>UI変更後にブラウザ確認まで依頼する</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span>テストが落ちた理由を一緒に切り分ける</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span>作業後に「何を学べる差分か」を説明してもらう</span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <p>Built as a static learning log for Codex practice.</p>
+        <a href="#top">ページ上部へ</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
